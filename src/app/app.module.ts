@@ -14,6 +14,7 @@ import { AfterMyLandComponent } from './after-my-land/after-my-land.component';
 import { MylandComponent } from './myland/myland.component';
 import { UserService } from '../app/services/user.service'
 import { AgmCoreModule } from '@agm/core';
+import { ViewLandComponent } from './view-land/view-land.component';
 
 
 
@@ -27,6 +28,7 @@ import { AgmCoreModule } from '@agm/core';
     AfterSubmitComponent,
     AfterMyLandComponent,
     MylandComponent,
+    ViewLandComponent,
 
   ],
   imports: [

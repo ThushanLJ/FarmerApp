@@ -1,54 +1,50 @@
-<!-- 
 <div class="background">
 
-        <h1 style="text-align: center;">My Land</h1>
-            <form action="action_page.php" method="post">
+  <div style="background-color: rgb(18, 82, 9); color: white;">
+    <a (click)="Land()" class="navbar-brand" style="margin:5px 180px;">Add lands</a>
+    <a (click)="Harvest()" class="navbar-brand" style="margin:5px 180px;">Add harvest</a>
+    <a (click)="Bid()" class="navbar-brand" style="margin:5px 180px;">Bid responses</a>
+  </div>
+
+  <br><br><br>
+
+  <div class="container">
+
+    <div *ngIf="marked1">
+      <h3>Search your Land Location</h3>
+
+      <div class="form-group">
+        <label>Enter address</label>
+        <input type="text" class="form-control" [(ngModel)]="address" (keydown.enter)="$event.preventDefault()"
+          placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text"
+          #search style="width: 500px;">
+      </div>
+
+      <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
+          (dragEnd)="markerDragEnd($event)"></agm-marker>
+      </agm-map>
 
 
-
-                    <div class="container">
-
-                      <input type="text"  placeholder="Size of land in purcahse" name="uname" required>
-
-                      <br/>
-
-                      <label for="psw" style="margin-right: 125px;"><b>Location</b></label>
-
-
-                      <br/>
-                      <div calss="text-center">
-                            <button type="submit" (click)="next()" >Next</button>
-
-                      </div>
-
-                    </div>
-
-
-                  </form>
-    </div> -->
-
-
-    <div class="background">
-
-    <div class = "container">
-        <h3>Search your Land Location</h3>
-        
-        <div class = "form-group">
-            <label>Enter address</label>
-            <input type="text" class="form-control" [(ngModel)] = "address" (keydown.enter)="$event.preventDefault()" placeholder="Search Nearest Location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" #search style="width: 500px;">
-        </div>
-          
-        <agm-map [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
-            <agm-marker [latitude]="latitude" [longitude]="longitude" [markerDraggable]="true"
-              (dragEnd)="markerDragEnd($event)"></agm-marker>
-        </agm-map>
-        
-        
       <div>Address: {{address}}</div>
 
-      <input type="text"  placeholder="Size of land in purcahse" name="uname" required>
-
-      
+      <label>Enter size of the land</label>
+      <input type="text" placeholder="Size of land in purcahse" name="size" [(ngModel)]="credential.size">
+      <br>
+      <button type="button" class="btn btn-success" (click)="AddLand()">Add the land</button>
     </div>
 
+    <div *ngIf="marked2">
+
+      <app-view-land></app-view-land>
     </div>
+
+
+    <div *ngIf="marked3">
+
+
+    </div>
+
+  </div>
+
+</div>

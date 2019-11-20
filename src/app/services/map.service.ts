@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http'
+import { Observable, of } from 'rxjs'
+import { map } from 'rxjs/operators'
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +12,7 @@ export class MapService {
   private latitude;
   private longitude;
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
   public updateLocation(latitude, longitude){
     this.latitude = latitude;
@@ -22,5 +26,14 @@ export class MapService {
   public getLongitude() {
     return this.longitude;
   }
+
+  public AddLand(land): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/land`, land)
+  }
+
+  public ViewLand(farmerId): Observable<any> {
+    return this.http.get(`http://localhost:8080/api/land`, farmerId)
+  }
+  
   
 }

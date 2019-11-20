@@ -16,10 +16,20 @@ export class MylandComponent implements OnInit {
   zoom:number;
   address: string;
   private geoCoder;
+
+  credential={
+    latitude:0,
+    longitude:0,
+    size:'',
+    farmer_id:''
+  }
  
   
   @ViewChild('search', {static: false})
   public searchElementRef: ElementRef;
+  marked1: boolean = true;
+  marked2: boolean = false;
+  marked3: boolean = false;
 
   constructor(
     private router: Router,
@@ -110,7 +120,44 @@ export class MylandComponent implements OnInit {
 
 
 
-  next(){
-    this.router.navigateByUrl('/myland/myhavest')
+  AddLand(){
+
+    this.credential.latitude = this.latitude
+    this.credential.longitude = this.longitude
+    this.credential.farmer_id = localStorage.getItem('userID')
+
+    console.log(this.credential)
+
+    this.mapService.AddLand(this.credential).subscribe(
+      result=>{
+       window.alert("You have add the land successfully")
+        window.location.reload()
+      }
+    )
   }
+
+
+  Land(){
+
+    this.marked1 = true
+    this.marked2 = false
+    this.marked3 = false
+  }
+
+  Harvest(){
+
+    this.marked1 = false
+    this.marked2 = true
+    this.marked3 = false
+  }
+
+
+  Bid(){
+
+    this.marked1 = false
+    this.marked2 = false
+    this.marked3 = true
+  }
+
+
 }
