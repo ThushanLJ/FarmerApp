@@ -7,11 +7,16 @@ import { MapService } from '../services/map.service'
   styleUrls: ['./view-land.component.css']
 })
 export class ViewLandComponent implements OnInit {
+  marked: boolean = true;
+  landId: any;
 
   constructor(private map:MapService) { }
 
     farmerId
 
+    land
+
+   arr = [1,2,3,4,5,6]
 
   ngOnInit() {
 
@@ -19,9 +24,17 @@ export class ViewLandComponent implements OnInit {
 
     this.map.ViewLand(this.farmerId).subscribe(
       result=>{
-        console.log(result)
+        this.land = result
       }
     )
+  }
+
+  ViewHarvest(){
+    this.marked = false
+  }
+
+  AddHarvest(id){
+    this.landId = id
   }
 
 }
