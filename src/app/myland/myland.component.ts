@@ -21,7 +21,7 @@ export class MylandComponent implements OnInit {
     latitude:0,
     longitude:0,
     size:'',
-    farmer_id:''
+    farmerId:''
   }
  
   
@@ -124,7 +124,7 @@ export class MylandComponent implements OnInit {
 
     this.credential.latitude = this.latitude
     this.credential.longitude = this.longitude
-    this.credential.farmer_id = localStorage.getItem('userID')
+    this.credential.farmerId = localStorage.getItem('userID')
 
     console.log(this.credential)
 
