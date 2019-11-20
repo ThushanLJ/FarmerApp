@@ -1,14 +1,14 @@
-.background{
+/* .background{
     height:45em; background-size:cover; width:auto;
     background-image:url('src\app\pictures\images (2).jpg');
     background-position:100% 100%;
 }
-/* Bordered form */
+
 form {
     border: 3px;
   }
   
-  /* Full-width inputs */
+
   input[type=text], input[type=password] {
     width: 50%;
     padding: 12px 20px;
@@ -18,7 +18,7 @@ form {
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
+  
   button {
     background-color: #4CAF50;
     color: white;
@@ -32,7 +32,12 @@ form {
 
   
   
-  /* Add a hover effect for buttons */
+
   button:hover {
     opacity: 0.8;
+  } */
+
+  agm-map {
+    height: 300px;
+    width: 300px
   }

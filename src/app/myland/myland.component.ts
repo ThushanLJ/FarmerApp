@@ -18,7 +18,7 @@ export class MylandComponent implements OnInit {
   private geoCoder;
  
   
-  // @ViewChild('search')
+  @ViewChild('search', {static: false})
   public searchElementRef: ElementRef;
 
   constructor(
