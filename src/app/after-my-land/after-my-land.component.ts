@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ViewLandComponent } from '../view-land/view-land.component'
+import { MapService } from '../services/map.service'
 
 @Component({
   selector: 'app-after-my-land',
@@ -8,7 +9,7 @@ import { ViewLandComponent } from '../view-land/view-land.component'
 })
 export class AfterMyLandComponent implements OnInit {
 
-  constructor(private view : ViewLandComponent) { }
+  constructor(private view : ViewLandComponent, private map: MapService) { }
 
   credentials={
     type:'',
@@ -27,6 +28,14 @@ export class AfterMyLandComponent implements OnInit {
     this.credentials.landId = this.view.landId
 
     console.log(this.credentials)
+
+    this.map.AddHarvest(this.credentials).subscribe(
+      result=>{
+        window.alert("You have successfully added the harvest")
+        window.location.reload
+      }
+    )
+
   }
 
 }

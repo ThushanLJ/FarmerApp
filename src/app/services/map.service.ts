@@ -34,6 +34,10 @@ export class MapService {
   public ViewLand(farmerId): Observable<any> {
     return this.http.get(`http://localhost:8080/api/land/ ${farmerId}`)
   }
+
+  public AddHarvest(harvest): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/farmer/harvest`, harvest)
+  }
   
   
 }

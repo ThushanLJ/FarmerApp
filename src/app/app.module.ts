@@ -15,6 +15,7 @@ import { MylandComponent } from './myland/myland.component';
 import { UserService } from '../app/services/user.service'
 import { AgmCoreModule } from '@agm/core';
 import { ViewLandComponent } from './view-land/view-land.component';
+import { ViewHarvestComponent } from './view-harvest/view-harvest.component';
 
 
 
@@ -29,6 +30,7 @@ import { ViewLandComponent } from './view-land/view-land.component';
     AfterMyLandComponent,
     MylandComponent,
     ViewLandComponent,
+    ViewHarvestComponent,
 
   ],
   imports: [
