@@ -27,6 +27,7 @@ export class LoginComponent implements OnInit {
       this.auth.FarmerLogin(this.credentials).subscribe(
         result=>{
           console.log(result)
+          localStorage.setItem('userID', result.farmer.farmerId)
           this.router.navigateByUrl('/myland')
         }
       )

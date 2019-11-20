@@ -1,4 +1,4 @@
-/* .background{
+.background{
     height:45em; background-size:cover; width:auto;
     background-image:url('src\app\pictures\images (2).jpg');
     background-position:100% 100%;
@@ -35,7 +35,7 @@ form {
 
   button:hover {
     opacity: 0.8;
-  } */
+  }
 
   agm-map {
     height: 300px;
