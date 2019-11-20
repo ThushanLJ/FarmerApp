@@ -1,0 +1,42 @@
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
+import { AfterProcessBidComponent } from './after-process-bid/after-process-bid.component';
+import { AfterSubmitComponent } from './after-submit/after-submit.component';
+import { AfterMyLandComponent } from './after-my-land/after-my-land.component';
+import { MylandComponent } from './myland/myland.component';
+import { UserService } from '../app/services/user.service'
+
+
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomepageComponent,
+    LoginComponent,
+    SigninComponent,
+    AfterProcessBidComponent,
+    AfterSubmitComponent,
+    AfterMyLandComponent,
+    MylandComponent,
+
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
+  ],
+  providers: [
+    UserService,
+  ],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
