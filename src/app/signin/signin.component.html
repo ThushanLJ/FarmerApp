@@ -21,13 +21,13 @@
                 
                 <div class="container" style="width:500px">
                   <label for="uname" ><b>First Name</b></label>
-                  <input name="firstname" class="form-control" placeholder="First name" type="text" required #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" [(ngModel)]="credentials.firstname">
+                  <input name="firstName" class="form-control" placeholder="First name" type="text" required #fname="ngModel" [class.is-invalid]="fname.invalid && fname.touched" [(ngModel)]="credentials.firstName">
                   <div class="alert_msg" >
                       <small class="text-danger" *ngIf="fname.invalid && fname.touched">Frist name is required</small>
                   </div>
               
                   <label for="psw"><b>Last Name</b></label>
-                  <input name="lastname" class="form-control" placeholder="Last name" type="text" required #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" [(ngModel)]="credentials.lastname">
+                  <input name="lastName" class="form-control" placeholder="Last name" type="text" required #lname="ngModel" [class.is-invalid]="lname.invalid && lname.touched" [(ngModel)]="credentials.lastName">
                   <div class="alert_msg" >
                       <small class="text-danger" *ngIf="lname.invalid && lname.touched">Last name is required</small>
                   </div>

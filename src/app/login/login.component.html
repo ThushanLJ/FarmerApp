@@ -11,7 +11,11 @@
 
     <form #userForm="ngForm" name="userForm" (submit)="login()">
 
-
+        <div class=radiobutton>       
+            <input type="radio" name="role" value="Farmer" name="group1" class="1" [(ngModel)]="credentials.role">Farmer
+            <input type="radio" name="role" value="Buyer" name="group1" class="2" [(ngModel)]="credentials.role">Buyer
+            <input type="radio" name="role" value="Admin" name="group1" class="2" [(ngModel)]="credentials.role">Admin
+        </div>
 
       <div class="container"  style="width:500px">
         <label for="uname"><b>Email</b></label>

@@ -53,26 +53,23 @@ export class UserService {
   }
 
   public FarmerRegister(user): Observable<any> {
-    return this.http.post(`/users/farmerRegister`, user)
+    return this.http.post(`http://localhost:8080/api/farmer`, user)
   }
 
   public BuyerRegister(user): Observable<any> {
-    return this.http.post(`/users/buyerRegister`, user)
+    return this.http.post(`http://localhost:8080/api/buyer`, user)
   }
 
-  public login(user): Observable<any> {
-    const base = this.http.post(`/users/login`, user)
+  public FarmerLogin(user): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/farmer/login`, user)
+  }
 
-    const request = base.pipe(
-      map((data: TokenResponse) => {
-        if (data.token) {
-          this.saveToken(data.token)
-        }
-        return data
-      })
-    )
+  public BuyerLogin(user): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/buyer/login`, user)
+  }
 
-    return request
+  public AdminLogin(user): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/admin/login`, user)
   }
 
 }

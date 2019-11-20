@@ -12,8 +12,8 @@ export class SigninComponent implements OnInit {
   constructor(private auth: UserService, private router: Router) { }
 
   credentials = {
-    firstname: '',
-    lastname: '',
+    firstName: '',
+    lastName: '',
     email: '',
     contactNo: '',
     nic:'',

@@ -13,7 +13,8 @@ export class LoginComponent implements OnInit {
 
   credentials={
     email:'',
-    password:''
+    password:'',
+    role:'Farmer'
   }
 
   ngOnInit() {
@@ -22,12 +23,26 @@ export class LoginComponent implements OnInit {
   login(){
     console.log(this.credentials)
 
-    this.auth.login(this.credentials).subscribe(
-      result=>{
-        console.log(result)
-        this.router.navigateByUrl('/myland')
-      }
-    )
+    if(this.credentials.role == "Farmer"){
+      this.auth.FarmerLogin(this.credentials).subscribe(
+        result=>{
+          console.log(result)
+          this.router.navigateByUrl('/myland')
+        }
+      )
+    }else if(this.credentials.role == "Buyer"){
+      this.auth.BuyerLogin(this.credentials).subscribe(
+        result=>{
+          console.log(result)
+        }
+      )
+    }else{
+      this.auth.AdminLogin(this.credentials).subscribe(
+        result=>{
+          console.log(result)
+        }
+      )
+    }
   }
 
 }

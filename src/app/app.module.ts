@@ -13,6 +13,7 @@ import { AfterSubmitComponent } from './after-submit/after-submit.component';
 import { AfterMyLandComponent } from './after-my-land/after-my-land.component';
 import { MylandComponent } from './myland/myland.component';
 import { UserService } from '../app/services/user.service'
+import { AgmCoreModule } from '@agm/core';
 
 
 
@@ -32,7 +33,11 @@ import { UserService } from '../app/services/user.service'
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyBjTh5fhWEMqiDEtMYmmQyVfNYdvNcB39A',
+      libraries: ['places']
+    }),
   ],
   providers: [
     UserService,
