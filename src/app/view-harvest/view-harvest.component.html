@@ -1,1 +1,27 @@
-<p>view-harvest works!</p>
+
+<button type="button" class="btn btn-success" (click)="Back()"><<Back to lands</button>
+<br><br><br>
+
+
+<table class="fixed_header">
+        <thead>
+          <tr>
+            <th>Harvest</th>
+            <th>Quantity</th>
+            <th>Unit price</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <div *ngFor="let harv of arr">
+          <tr>
+            <td>row 1-0</td>
+            <td>row 1-1</td>
+            <td>row 1-2</td>
+            <td>row 1-3</td>
+          </tr>
+        </div>
+
+        </tbody>
+      </table>

@@ -29,12 +29,17 @@ export class ViewLandComponent implements OnInit {
     )
   }
 
-  ViewHarvest(){
+  ViewHarvest(id){
+    this.landId = id
     this.marked = false
   }
 
   AddHarvest(id){
     this.landId = id
+  }
+
+  DeleteLand(){
+    
   }
 
 }
