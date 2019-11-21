@@ -53,7 +53,7 @@ export class MapService {
     return this.http.get(`http://localhost:8080/api/summary/getSummaryForPastYears/${y}`);
   }
   public pastYear(): Observable<any> {
-    return this.http.post('http://localhost:8080/api/summary/getPastYearSummary');
+    return this.http.post('http://localhost:8080/api/summary/getPastYearSummary', {ddd:1});
   }
 
   public UpdateHarvest(harvest): Observable<any> {

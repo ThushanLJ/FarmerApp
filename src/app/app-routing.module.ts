@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'myland', component: MylandComponent},
-  {path: 'myland/myhavest', component: AfterMyLandComponent},
+  {path: 'buyerProfile', component: BuyerProfileComponent},
   { path: 'myland/chart', component: ChartComponent }
 ];
 
