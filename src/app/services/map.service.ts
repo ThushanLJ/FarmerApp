@@ -45,9 +45,14 @@ export class MapService {
   }
 
   public ViewHarvest(landId): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/land/ ${landId}/harvest`)
+    return this.http.get(`http://localhost:8080/api/land/ ${landId}/harvest`);
   }
-  
-  
-  
+
+  public pastYears(y): Observable<any> {
+    console.log(y);
+    return this.http.get(`http://localhost:8080/api/summary/getSummaryForPastYears/${y}`);
+  }
+  public pastYear(): Observable<any> {
+    return this.http.post('http://localhost:8080/api/summary/getPastYearSummary');
+  }
 }

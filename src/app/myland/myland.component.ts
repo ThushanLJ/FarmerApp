@@ -23,14 +23,14 @@ export class MylandComponent implements OnInit {
     size:'',
     farmerId:''
   }
- 
-  
+
+
   @ViewChild('search', {static: false})
   public searchElementRef: ElementRef;
   marked1: boolean = true;
   marked2: boolean = false;
   marked3: boolean = false;
-
+  marked4 = false;
   constructor(
     private router: Router,
     private mapsAPILoader: MapsAPILoader,
@@ -65,7 +65,7 @@ export class MylandComponent implements OnInit {
 
           // Update location data in map service
           this.mapService.updateLocation(this.latitude, this.longitude);
-          
+
         });
       });
     });
@@ -83,13 +83,13 @@ export class MylandComponent implements OnInit {
 
         // Update location data in map service
         this.mapService.updateLocation(this.latitude, this.longitude);
-       
+
       });
     }
-  } 
-  
-  
- 
+  }
+
+
+
   markerDragEnd($event: MouseEvent) {
     console.log($event);
     this.latitude = $event.coords.lat;
@@ -99,7 +99,7 @@ export class MylandComponent implements OnInit {
     // Update location data in map service
     this.mapService.updateLocation(this.latitude, this.longitude);
   }
- 
+
   getAddress(latitude, longitude) {
     this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
       console.log(results);
@@ -129,35 +129,43 @@ export class MylandComponent implements OnInit {
     console.log(this.credential)
 
     this.mapService.AddLand(this.credential).subscribe(
-      result=>{
+      result => {
        window.alert("You have add the land successfully")
         window.location.reload()
       }
-    )
+    );
   }
 
 
-  Land(){
+  Land() {
 
-    this.marked1 = true
-    this.marked2 = false
-    this.marked3 = false
+    this.marked1 = true;
+    this.marked2 = false;
+    this.marked3 = false;
+    this.marked4 = false;
   }
 
-  Harvest(){
-
-    this.marked1 = false
-    this.marked2 = true
-    this.marked3 = false
+  Harvest() {
+    this.marked1 = false;
+    this.marked2 = true;
+    this.marked3 = false;
+    this.marked4 = false;
   }
 
 
-  Bid(){
+  Bid() {
 
-    this.marked1 = false
-    this.marked2 = false
-    this.marked3 = true
+    this.marked1 = false;
+    this.marked2 = false;
+    this.marked3 = true;
+    this.marked4 = false;
   }
-
+  prediction() {
+    console.log('prediction');
+    this.marked1 = false;
+    this.marked2 = false;
+    this.marked3 = false;
+    this.marked4 = true;
+  }
 
 }
