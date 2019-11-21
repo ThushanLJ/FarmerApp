@@ -23,8 +23,8 @@ export class MylandComponent implements OnInit {
     size:'',
     farmerId:''
   }
- 
-  
+
+
   @ViewChild('search', {static: false})
   public searchElementRef: ElementRef;
   marked1: boolean = true;
@@ -65,7 +65,7 @@ export class MylandComponent implements OnInit {
 
           // Update location data in map service
           this.mapService.updateLocation(this.latitude, this.longitude);
-          
+
         });
       });
     });
@@ -83,13 +83,13 @@ export class MylandComponent implements OnInit {
 
         // Update location data in map service
         this.mapService.updateLocation(this.latitude, this.longitude);
-       
+
       });
     }
-  } 
-  
-  
- 
+  }
+
+
+
   markerDragEnd($event: MouseEvent) {
     console.log($event);
     this.latitude = $event.coords.lat;
@@ -99,7 +99,7 @@ export class MylandComponent implements OnInit {
     // Update location data in map service
     this.mapService.updateLocation(this.latitude, this.longitude);
   }
- 
+
   getAddress(latitude, longitude) {
     this.geoCoder.geocode({ 'location': { lat: latitude, lng: longitude } }, (results, status) => {
       console.log(results);
@@ -157,6 +157,14 @@ export class MylandComponent implements OnInit {
     this.marked1 = false
     this.marked2 = false
     this.marked3 = true
+  }
+
+
+  LogOut(){
+
+    localStorage.removeItem('userID')
+
+    this.router.navigateByUrl('/home')
   }
 
 

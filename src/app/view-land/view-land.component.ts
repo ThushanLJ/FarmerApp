@@ -38,8 +38,14 @@ export class ViewLandComponent implements OnInit {
     this.landId = id
   }
 
-  DeleteLand(){
-    
+  DeleteLand(id){
+
+    this.map.DeleteLand(id).subscribe(
+      result=>{
+        window.location.reload()
+      }
+    )
+
   }
 
 }

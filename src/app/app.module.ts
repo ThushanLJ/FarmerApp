@@ -19,6 +19,7 @@ import { ViewHarvestComponent } from './view-harvest/view-harvest.component';
 import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerBidComponent } from './buyer-bid/buyer-bid.component';
 import { BidResponsesComponent } from './bid-responses/bid-responses.component';
+import { BidService } from '../app/services/bid.service'
 
 
 
@@ -52,6 +53,7 @@ import { BidResponsesComponent } from './bid-responses/bid-responses.component';
   ],
   providers: [
     UserService,
+    BidService
   ],
   bootstrap: [AppComponent]
 })

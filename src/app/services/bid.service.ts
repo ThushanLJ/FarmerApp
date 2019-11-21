@@ -9,8 +9,8 @@ export class BidService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-  public GetHarvest(): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/buyer/harvest`)
+  public GetHarvest(buyerId): Observable<any> {
+    return this.http.get(`http://localhost:8080/api/buyer/${buyerId}/harvest`)
   }
 
   public AddBid(bid): Observable<any> {

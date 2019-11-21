@@ -24,6 +24,27 @@ export class ViewHarvestComponent implements OnInit {
     )
   }
 
+  UpdateHarvest(harvest){
+
+    harvest.status = 1
+    this.map.UpdateHarvest(harvest).subscribe(
+      result=>{
+        this.ngOnInit()
+      }
+    )
+  }
+
+
+  ResetUpdate(harvest){
+
+    harvest.status = 0
+    this.map.UpdateHarvest(harvest).subscribe(
+      result=>{
+        this.ngOnInit()
+      }
+    )
+  }
+
 
   Back(){
     this.view.marked = true
