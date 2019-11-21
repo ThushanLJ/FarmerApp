@@ -14,12 +14,15 @@
         </thead>
         <tbody>
 
-          <div *ngFor="let harv of arr">
+          <div *ngFor="let harv of harvest">
           <tr>
-            <td>row 1-0</td>
-            <td>row 1-1</td>
-            <td>row 1-2</td>
-            <td>row 1-3</td>
+            <td>{{ harv.type }}</td>
+            <td>{{ harv.quantity }}</td>
+            <td>{{ harv.unitPrice }}</td>
+            <td>
+              <div *ngIf="harv.status==0"><button (click)="UpdateHarvest(harv)">Set to sell</button></div>
+              <div *ngIf="harv.status==1"><button (click)="ResetUpdate(harv)">Remove from sell</button></div>
+            </td>
           </tr>
         </div>
 

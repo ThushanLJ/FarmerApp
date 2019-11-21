@@ -37,7 +37,7 @@ export class MapService {
 
 
   public DeleteLand(landId): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/land/ ${landId}`)
+    return this.http.delete(`http://localhost:8080/api/land/ ${landId}`)
   }
 
   public AddHarvest(harvest): Observable<any> {
@@ -55,4 +55,11 @@ export class MapService {
   public pastYear(): Observable<any> {
     return this.http.post('http://localhost:8080/api/summary/getPastYearSummary');
   }
+
+  public UpdateHarvest(harvest): Observable<any> {
+    return this.http.put(`http://localhost:8080/api/farmer/harvest`, harvest);
+  }
+
+
+
 }

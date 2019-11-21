@@ -6,6 +6,7 @@ import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { MylandComponent } from './myland/myland.component';
 import { ChartComponent } from './chart/chart.component';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 
 const routes: Routes = [
 

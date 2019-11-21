@@ -168,4 +168,12 @@ export class MylandComponent implements OnInit {
     this.marked4 = true;
   }
 
+  LogOut(){
+
+    localStorage.removeItem('userID')
+
+    this.router.navigateByUrl('/home')
+  }
+
+
 }
