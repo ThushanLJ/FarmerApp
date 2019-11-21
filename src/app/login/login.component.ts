@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
     }else if(this.credentials.role == "Buyer"){
       this.auth.BuyerLogin(this.credentials).subscribe(
         result=>{
+          localStorage.setItem('userID', result.Buyer.buyerId)
           console.log(result)
+          this.router.navigateByUrl('/buyerProfile')
         }
       )
     }else{

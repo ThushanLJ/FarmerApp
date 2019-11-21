@@ -5,6 +5,7 @@ import { AfterMyLandComponent } from './after-my-land/after-my-land.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
 import { MylandComponent } from './myland/myland.component';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 
 const routes: Routes = [
 
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'login', component:LoginComponent},
   {path: 'signin', component:SigninComponent},
   {path: 'myland', component:MylandComponent},
-  {path: 'myland/myhavest', component:AfterMyLandComponent},
+  {path: 'buyerProfile', component:BuyerProfileComponent},
 
 ];
 

@@ -16,6 +16,10 @@ import { UserService } from '../app/services/user.service'
 import { AgmCoreModule } from '@agm/core';
 import { ViewLandComponent } from './view-land/view-land.component';
 import { ViewHarvestComponent } from './view-harvest/view-harvest.component';
+import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
+import { BuyerBidComponent } from './buyer-bid/buyer-bid.component';
+import { BidResponsesComponent } from './bid-responses/bid-responses.component';
+
 
 
 
@@ -31,6 +35,9 @@ import { ViewHarvestComponent } from './view-harvest/view-harvest.component';
     MylandComponent,
     ViewLandComponent,
     ViewHarvestComponent,
+    BuyerProfileComponent,
+    BuyerBidComponent,
+    BidResponsesComponent,
 
   ],
   imports: [

@@ -1,0 +1,23 @@
+<div class="background">
+
+        <div style="background-color: rgb(18, 82, 9); color: white;">
+          <a (click)="ViewHarvest()" class="navbar-brand" style="margin:5px 250px;">View harvest</a>
+          <a (click)="YourBid()" class="navbar-brand" style="margin:5px 250px;">Your Bid</a>
+        </div>
+      
+        <br><br><br>
+      
+        <div class="container">
+
+            <div *ngIf="marked">
+                
+                
+            </div>
+
+            <div *ngIf="!marked">
+                <app-buyer-bid></app-buyer-bid>
+            </div>
+      
+        </div>
+      
+      </div>
