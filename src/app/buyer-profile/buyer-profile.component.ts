@@ -14,7 +14,7 @@ export class BuyerProfileComponent implements OnInit {
 
   ngOnInit() {
 
-    this.bid.GetHarvest().subscribe(
+    this.bid.GetHarvest(localStorage.getItem('userID')).subscribe(
       result=>{
         this.harvest = result
         console.log(this.harvest)
