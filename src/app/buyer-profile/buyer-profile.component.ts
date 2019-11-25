@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { BidService } from '../services/bid.service'
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {BidService} from '../services/bid.service';
 
 @Component({
   selector: 'app-buyer-profile',
@@ -10,7 +11,8 @@ export class BuyerProfileComponent implements OnInit {
   marked: boolean = true;
   harvest: any;
 
-  constructor(private bid: BidService) { }
+  constructor(private bid: BidService, private  router: Router) {
+  }
 
   ngOnInit() {
 
@@ -19,15 +21,26 @@ export class BuyerProfileComponent implements OnInit {
         this.harvest = result
         console.log(this.harvest)
       }
-    )
+    );
   }
 
-  ViewHarvest(){
-    this.marked = true
+  ViewHarvest() {
+    this.marked = true;
   }
 
-  YourBid(){
-    this.marked = false
+  YourBid() {
+    this.marked = false;
+  }
+
+  LogOut(){
+
+    localStorage.removeItem('userID')
+
+    this.router.navigateByUrl('/home')
+  }
+
+  SubmitBid(harvID){
+
   }
 
 }
