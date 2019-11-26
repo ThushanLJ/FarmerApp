@@ -10,6 +10,7 @@
             <th>Quantity</th>
             <th>Unit price</th>
             <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
@@ -22,9 +23,46 @@
             <td>
               <div *ngIf="harv.status==0"><button (click)="UpdateHarvest(harv)">Set to sell</button></div>
               <div *ngIf="harv.status==1"><button (click)="ResetUpdate(harv)">Remove from sell</button></div>
+              <div *ngIf="harv.status==2" style="color: red;">Sold</div>
             </td>
+            <td><div *ngIf="harv.status==1"><button data-toggle="modal" data-target="#exampleModalCenter" (click)="ViewBid(harv.id)">View Bids</button></div></td>
           </tr>
         </div>
 
         </tbody>
       </table>
+
+
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              
+              <table class="fixed_header2">
+                <thead>
+                  <tr>
+                    <th>Buyer</th>
+                    <th>Unit Bid price</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+        
+                  <div *ngFor="let bid of harvBid">
+                  <tr>
+                    <td>{{ bid.buyer.firstName }} {{ bid.buyer.lastName }}</td>
+                    <td>{{ bid.bidUnitPrice }}</td>
+                    <td><button (click)="AcceptBid(bid)">Accept Bid</button></td>
+                  </tr>
+                </div>
+        
+                </tbody>
+              </table>
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>

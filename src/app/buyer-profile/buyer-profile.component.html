@@ -20,11 +20,11 @@
                       <img class="category__01" src="../../assets/images/map.jpg" alt="" />
                     </picture>
                     <div class="card-content">
-                      <h4>Type:{{harv.type}}</h4>
-                      <h4>Quantity:{{harv.quantity}}</h4>
-                      <h4>Unit price:{{harv.unitPrice}}</h4>
-                      <label><h4><b>Put your unit price here:</b></h4></label>
-                      <input type="text" name="unitPrice" style="width: 250px" >
+                      <h5>Type:{{harv.type}}</h5>
+                      <h5>Quantity:{{harv.quantity}}</h5>
+                      <h5>Unit price:{{harv.unitPrice}}</h5>
+                      <label><h5><b>Put your unit price here:</b></h5></label>
+                      <h5><input type="text" name="bidUnitPrice" style="width: 250px" [(ngModel)]="bid_details.bidUnitPrice"></h5>
                       <button class="btn btn-success" style="width: 200px" (click)="SubmitBid(harv.id)">Submit Bid</button>
                     </div><!-- .card-content -->
                   </article>

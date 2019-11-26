@@ -1,0 +1,43 @@
+
+<div class="background">
+
+        <div style="background-color: rgb(18, 82, 9); color: white;">
+                <a (click)="LogOut()" class="navbar-brand" style="margin:5px 85%;"><div>Logout</div></a>
+              </div>
+
+
+        <table class="fixed_header">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>email</th>
+                    <th>NIC</th>
+                    <th>Contact</th>
+                    <th>Address</th>
+                    <th>Grama Niladari Division</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+        
+                  <div *ngFor="let farm of farmer">
+                  <tr>
+                    <td>{{ farm.firstName }} {{ farm.lastName }}</td>
+                    <td>{{ farm.email }}</td>
+                    <td>{{ farm.nic }}</td>
+                    <td>{{ farm.contactNo }}</td>
+                    <td>{{ farm.personalAddress }}</td>
+                    <td>{{ farm.gramaNiladariDivision }}</td>
+                    <td><button style="margin: 5px;" (click)="Accept(farm.farmerId)"
+                        *ngIf="farm.accepted == 0">Accept the farmer</button>
+                        <div
+                        *ngIf="farm.accepted == 1">Accepted</div>
+                    </td>
+                  </tr>
+                </div>
+        
+                </tbody>
+              </table>
+
+
+</div>

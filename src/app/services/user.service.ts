@@ -72,4 +72,14 @@ export class UserService {
     return this.http.post(`http://localhost:8080/api/admin/login`, user)
   }
 
+  public AllFarmer():Observable<any>{
+    return this.http.get(`http://localhost:8080/api/farmer`)
+  }
+
+  public updateFarmer(farmerId):Observable<any>{
+    return this.http.put(`http://localhost:8080/api/farmer/approve/${farmerId}`, {})
+  }
+
+
+
 }

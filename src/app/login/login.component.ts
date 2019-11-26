@@ -42,7 +42,8 @@ export class LoginComponent implements OnInit {
     }else{
       this.auth.AdminLogin(this.credentials).subscribe(
         result=>{
-          console.log(result)
+          console.log('Hello')
+          this.router.navigateByUrl('/adminHome')
         }
       )
     }

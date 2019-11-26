@@ -14,6 +14,12 @@ export class BuyerProfileComponent implements OnInit {
   constructor(private bid: BidService, private  router: Router) {
   }
 
+  bid_details={
+    bidUnitPrice:0,
+    buyerId:'',
+    harvestId:0
+  }
+
   ngOnInit() {
 
     this.bid.GetHarvest(localStorage.getItem('userID')).subscribe(
@@ -41,6 +47,17 @@ export class BuyerProfileComponent implements OnInit {
 
   SubmitBid(harvID){
 
+    this.bid_details.harvestId = harvID
+    this.bid_details.buyerId = localStorage.getItem('userID')
+
+    console.log(this.bid_details)
+
+    this.bid.AddBid(this.bid_details).subscribe(
+      result=>{
+        this.ngOnInit()
+        window.alert('Bid is added successfully')
+      }
+    )
   }
 
 }
