@@ -44,7 +44,6 @@ import { FutureCultivationComponent } from './future-cultivation/future-cultivat
     ChartComponent,
     BuyerProfileComponent,
     BuyerBidComponent,
-    BidResponsesComponent,
     BarchartComponent,
     AdminHomeComponent,
     FutureCultivationComponent
