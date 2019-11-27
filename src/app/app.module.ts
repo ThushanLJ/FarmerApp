@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,7 +21,8 @@ import { ChartComponent } from './chart/chart.component';
 import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerBidComponent } from './buyer-bid/buyer-bid.component';
 import { BidResponsesComponent } from './bid-responses/bid-responses.component';
-import { BidService } from '../app/services/bid.service'
+import { BidService } from '../app/services/bid.service';
+import { BarchartComponent } from './barchart/barchart.component'
 
 
 
@@ -41,6 +43,7 @@ import { BidService } from '../app/services/bid.service'
     BuyerProfileComponent,
     BuyerBidComponent,
     BidResponsesComponent,
+    BarchartComponent,
 
   ],
   imports: [
@@ -52,6 +55,7 @@ import { BidService } from '../app/services/bid.service'
       apiKey: 'AIzaSyBjTh5fhWEMqiDEtMYmmQyVfNYdvNcB39A',
       libraries: ['places']
     }),
+    ChartsModule
   ],
   providers: [
     UserService,
