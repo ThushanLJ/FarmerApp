@@ -26,3 +26,32 @@
   text-align: left;
   width: 250px;
 }
+
+
+.fixed_header2{
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.fixed_header2 tbody{
+  display:block;
+  width: 100%;
+  overflow: auto;
+  height: 500px;
+}
+
+.fixed_header2 thead tr {
+   display: block;
+}
+
+.fixed_header2 thead {
+  background: black;
+  color:#fff;
+}
+
+.fixed_header2 th, .fixed_header2 td {
+  padding: 5px;
+  text-align: left;
+  width: 40%;
+}

@@ -1,1 +1,30 @@
-<p>buyer-bid works!</p>
+   
+    
+    <table class="fixed_header">
+            <thead>
+              <tr>
+                <th>Harvest</th>
+                <th>Quantity</th>
+                <th>Bid Unit price</th>
+                <th>Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+    
+              <div *ngFor="let bid of bidU">
+              <tr>
+                <td>{{ bid.harvest.type }}</td>
+                <td>{{ bid.harvest.quantity }}</td>
+                <td>{{ bid.bidUnitPrice }}</td>
+                <td>
+                  <div *ngIf="bid.status==0" style="color: red;">Pending</div>
+                  <div *ngIf="bid.status==1" style="color: green;">Accepted</div>
+                </td>
+                <td><div *ngIf="bid.status==0"><button (click)="deleteBid(bid.id)">Delete bid</button></div></td>
+              </tr>
+            </div>
+    
+            </tbody>
+          </table>
+    

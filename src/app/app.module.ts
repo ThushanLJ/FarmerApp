@@ -20,9 +20,11 @@ import { ViewHarvestComponent } from './view-harvest/view-harvest.component';
 import { ChartComponent } from './chart/chart.component';
 import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerBidComponent } from './buyer-bid/buyer-bid.component';
-import { BidResponsesComponent } from './bid-responses/bid-responses.component';
 import { BidService } from '../app/services/bid.service';
 import { BarchartComponent } from './barchart/barchart.component'
+import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { FutureCultivationComponent } from './future-cultivation/future-cultivation.component';
+
 
 
 
@@ -44,6 +46,8 @@ import { BarchartComponent } from './barchart/barchart.component'
     BuyerBidComponent,
     BidResponsesComponent,
     BarchartComponent,
+    AdminHomeComponent,
+    FutureCultivationComponent
 
   ],
   imports: [

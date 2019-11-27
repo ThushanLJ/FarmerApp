@@ -1,6 +1,13 @@
+.background{
+    height:45em; background-size:cover; width:auto;
+    background-image:url('src\app\pictures\images (2).jpg');
+    background-position:100% 100%;
+}
+
+
 
 .fixed_header{
-    width: 1000px;
+    width: 100%;
     table-layout: fixed;
     border-collapse: collapse;
 }
@@ -24,5 +31,5 @@
 .fixed_header th, .fixed_header td {
   padding: 5px;
   text-align: left;
-  width: 250px;
+  width: 200px;
 }

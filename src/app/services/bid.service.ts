@@ -18,11 +18,20 @@ export class BidService {
   }
 
   public DeleteBid(bidId): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/buyer/bid/ ${bidId}`)
+    return this.http.delete(`http://localhost:8080/api/buyer/bid/ ${bidId}`)
   }
 
   public GetBid(buyerId): Observable<any> {
     return this.http.get(`http://localhost:8080/api/buyer/ ${buyerId}/bids`)
+  }
+
+
+  public GetHarvestBid(harvestId): Observable<any> {
+    return this.http.get(`http://localhost:8080/api/farmer/harvest/${harvestId}/bids`)
+  }
+
+  public UpdateBid(bid):Observable<any>{
+    return this.http.put(`http://localhost:8080/api/farmer/bid`,bid)
   }
 
 

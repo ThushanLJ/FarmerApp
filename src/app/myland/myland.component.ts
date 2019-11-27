@@ -152,16 +152,17 @@ export class MylandComponent implements OnInit {
     this.marked4 = false;
   }
 
-
-  Bid() {
-
+  prediction() {
+    console.log('prediction');
     this.marked1 = false;
     this.marked2 = false;
     this.marked3 = true;
     this.marked4 = false;
   }
-  prediction() {
-    console.log('prediction');
+
+
+  Future() {
+
     this.marked1 = false;
     this.marked2 = false;
     this.marked3 = false;
