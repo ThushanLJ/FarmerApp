@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col">
+
+        <div class="wrapper">
+            <div class="container">
+                <form autocomplete="off" action="">
+                    <div class="group">
+                        <label for="type">Type:</label>
+                        <input type="text" id="type" name="type" [(ngModel)]="credential.type">
+                    </div>
+                    <div class="group">
+                        <label for="qty">Quantity:</label>
+                        <input type="text" id="qty" name="qty" [(ngModel)]="credential.qty">
+                    </div>
+                    <div class="group">
+                        <label for="year">Expected Year:</label>
+                        <select name="year" [(ngModel)]="credential.year">
+                            <option>2019</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                            <option>2022</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-success" (click)="AddFuture()">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+
+    </div>
+</div>

@@ -21,6 +21,7 @@ import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { BuyerBidComponent } from './buyer-bid/buyer-bid.component';
 import { BidService } from '../app/services/bid.service';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { FutureCultivationComponent } from './future-cultivation/future-cultivation.component';
 
 
 
@@ -41,7 +42,8 @@ import { AdminHomeComponent } from './admin-home/admin-home.component';
     ChartComponent,
     BuyerProfileComponent,
     BuyerBidComponent,
-    AdminHomeComponent
+    AdminHomeComponent,
+    FutureCultivationComponent
 
   ],
   imports: [
