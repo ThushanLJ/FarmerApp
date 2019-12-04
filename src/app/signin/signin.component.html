@@ -1,6 +1,6 @@
 <div class="background">
 
-    <button type="button" class="btn btn-dark" routerLink="/home" style="margin:5px; width: 200px;"> <<Back to home </button>
+    <button type="button" class="btn btn-dark" routerLink="/home" style="margin:5px; width: 200px;"> Back to home </button>
 
         <div class="header">
             <h1>Sign In</h1>
@@ -9,7 +9,7 @@
     
  
 
-       <form #userForm="ngForm" name="userForm" (submit)="register()">
+       <form #userForm="ngForm" name="userForm" (submit)="register()" ngNativeValidate>
 
           <div class=radiobutton>
          
@@ -33,7 +33,7 @@
                   </div>
 
                   <label for="psw"><b>Email</b></label>
-                  <input name="email" class="form-control" placeholder="email" type="text" required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched" [(ngModel)]="credentials.email">
+                  <input name="email" class="form-control" placeholder="email" type="email" required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched" [(ngModel)]="credentials.email">
                   <div class="alert_msg" >
                       <small class="text-danger" *ngIf="mail.invalid && mail.touched">email is required</small>
                   </div>
