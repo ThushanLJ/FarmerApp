@@ -8,6 +8,8 @@ import { MylandComponent } from './myland/myland.component';
 import { ChartComponent } from './chart/chart.component';
 import { BuyerProfileComponent } from './buyer-profile/buyer-profile.component';
 import { AdminHomeComponent } from './admin-home/admin-home.component';
+import { ExpectedCultivationComponent } from './expected-cultivation/expected-cultivation.component';
+
 
 const routes: Routes = [
 
@@ -18,7 +20,8 @@ const routes: Routes = [
   {path: 'myland', component: MylandComponent},
   {path: 'buyerProfile', component: BuyerProfileComponent},
   { path: 'myland/chart', component: ChartComponent },
-  { path: 'adminHome', component: AdminHomeComponent }
+  { path: 'adminHome', component: AdminHomeComponent },
+  { path: 'expected_cultivation', component:ExpectedCultivationComponent}
 ];
 
 @NgModule({

@@ -12,6 +12,6 @@ export class FutureService {
   constructor(private http: HttpClient, private router: Router) {}
 
   public AddFutureHarvest(harvest): Observable<any> {
-    return this.http.post(`http://localhost:8080/api/farmer`, harvest)
+    return this.http.post(`http://localhost:8080/api/farmer/future`, harvest)
   }
 }

@@ -24,6 +24,7 @@ import { BidService } from '../app/services/bid.service';
 import { BarchartComponent } from './barchart/barchart.component'
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { FutureCultivationComponent } from './future-cultivation/future-cultivation.component';
+import { ExpectedCultivationComponent } from './expected-cultivation/expected-cultivation.component';
 
 
 
@@ -46,7 +47,8 @@ import { FutureCultivationComponent } from './future-cultivation/future-cultivat
     BuyerBidComponent,
     BarchartComponent,
     AdminHomeComponent,
-    FutureCultivationComponent
+    FutureCultivationComponent,
+    ExpectedCultivationComponent
 
   ],
   imports: [
