@@ -33,7 +33,7 @@
                   </div>
 
                   <label for="psw"><b>Email</b></label>
-                  <input name="email" class="form-control" placeholder="email" type="text" required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched" [(ngModel)]="credentials.email">
+                  <input name="email" class="form-control" placeholder="email" type="email" required #mail="ngModel" [class.is-invalid]="mail.invalid && mail.touched" [(ngModel)]="credentials.email">
                   <div class="alert_msg" >
                       <small class="text-danger" *ngIf="mail.invalid && mail.touched">email is required</small>
                   </div>

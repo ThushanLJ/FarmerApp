@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col">
+    <div class="col-5">
 
         <div class="wrapper">
             <div class="container">
@@ -10,7 +10,7 @@
                     </div>
                     <div class="group">
                         <label for="qty">Quantity:</label>
-                        <input type="text" id="qty" name="qty" [(ngModel)]="credential.qty">
+                        <input type="text" id="qty" name="quantity" [(ngModel)]="credential.quantity">
                     </div>
                     <div class="group">
                         <label for="year">Expected Year:</label>
@@ -31,5 +31,50 @@
 
     <div class="col">
 
+        <h1>Current cultivation 2019</h1>
+
+        <table class="fixed_header">
+            <thead>
+              <tr>
+                <th>Harvest</th>
+                <th>Quantity</th>
+              </tr>
+            </thead>
+            <tbody>
+    
+              <div *ngFor="let cur of current">
+              <tr>
+                <td>{{ cur[0] }}</td>
+                <td>{{ cur[1] }}</td>
+              </tr>
+            </div>
+    
+            </tbody>
+          </table>
     </div>
+
+    <div class="col">
+
+            <h1>Current cultivation 2020</h1>
+    
+            <table class="fixed_header">
+                <thead>
+                  <tr>
+                    <th>Harvest</th>
+                    <th>Quantity</th>
+                  </tr>
+                </thead>
+                <tbody>
+        
+                  <div *ngFor="let fut of future">
+                  <tr>
+                    <td>{{ fut[0] }}</td>
+                    <td>{{ fut[1] }}</td>
+                  </tr>
+                </div>
+        
+                </tbody>
+              </table>
+        </div>
+
 </div>

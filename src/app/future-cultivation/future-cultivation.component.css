@@ -75,3 +75,38 @@
     cursor:pointer;
     box-shadow:0 10px 15px -5px rgba(0,0,0,0.4);
   }
+
+
+
+
+
+  
+.fixed_header{
+  width: 200px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.fixed_header tbody{
+display:block;
+width: 100%;
+overflow: auto;
+height: 500px;
+}
+
+.fixed_header thead tr {
+ display: block;
+}
+
+.fixed_header thead {
+background: black;
+color:#fff;
+}
+
+.fixed_header th, .fixed_header td {
+padding: 5px;
+text-align: left;
+width: 50px;
+}
+
+
