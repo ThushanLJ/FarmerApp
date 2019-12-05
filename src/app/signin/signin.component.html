@@ -1,6 +1,6 @@
 <div class="background">
 
-    <button type="button" class="btn btn-dark" routerLink="/home" style="margin:5px; width: 200px;"> <<Back to home </button>
+    <button type="button" class="btn btn-dark" routerLink="/home" style="margin:5px; width: 200px;"> Back to home </button>
 
         <div class="header">
             <h1>Sign In</h1>
@@ -9,7 +9,7 @@
     
  
 
-       <form #userForm="ngForm" name="userForm" (submit)="register()">
+       <form #userForm="ngForm" name="userForm" (submit)="register()" ngNativeValidate>
 
           <div class=radiobutton>
          

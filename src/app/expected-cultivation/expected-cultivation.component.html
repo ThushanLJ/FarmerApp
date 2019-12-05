@@ -1,0 +1,19 @@
+ <table class="table">
+    <thead>
+        <tr>
+            <th>Type</th>
+            <th>Current Quantity</th>
+            <th>Expected Quantity</th>
+            <th>Percentage</th>
+        </tr>
+        </thead>
+    <tbody *ngFor="let info of Cultivation_result">
+            <tr>
+                <td>{{info?.type}}</td>
+                <td>{{info?.currentQ}}</td>
+                <td>{{info?.expectedQ}}</td>
+                <td>{{info?.percentage}}%</td>
+            </tr>
+    </tbody>
+</table> 
+ 

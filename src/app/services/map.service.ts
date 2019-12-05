@@ -49,7 +49,7 @@ export class MapService {
   }
 
   public viewTypes(): Observable<any> {
-    return this.http.get(`http://localhost:8080//api/summary/types`);
+    return this.http.get(`http://localhost:8080/api/summary/types`);
   }
   
   public sendType(type): Observable<any> {
