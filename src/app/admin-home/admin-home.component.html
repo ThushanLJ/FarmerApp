@@ -2,8 +2,13 @@
 <div class="background">
 
         <div style="background-color: rgb(18, 82, 9); color: white;">
-                <a (click)="LogOut()" class="navbar-brand" style="margin:5px 85%;"><div>Logout</div></a>
+                <a (click)="home()" class="navbar-brand" style="margin:5px 5%;"><div>Home</div></a>
+                <a (click)="add()" class="navbar-brand" style="margin:5px 5%;"><div>Add expected cultivation</div></a>
+                <a (click)="LogOut()" class="navbar-brand" style="margin:5px 0 5px 40%"><div>Logout</div></a>
               </div>
+
+        
+        <div *ngIf="marked">
 
 
         <table class="fixed_header">
@@ -38,6 +43,14 @@
         
                 </tbody>
               </table>
+
+            </div>
+
+
+            <div *ngIf="!marked">
+              <app-add-expected></app-add-expected>
+            </div>
+
 
 
 </div>

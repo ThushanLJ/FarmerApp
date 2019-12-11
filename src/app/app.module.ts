@@ -25,6 +25,7 @@ import { BarchartComponent } from './barchart/barchart.component'
 import { AdminHomeComponent } from './admin-home/admin-home.component';
 import { FutureCultivationComponent } from './future-cultivation/future-cultivation.component';
 import { ExpectedCultivationComponent } from './expected-cultivation/expected-cultivation.component';
+import { AddExpectedComponent } from './add-expected/add-expected.component';
 
 
 
@@ -48,7 +49,8 @@ import { ExpectedCultivationComponent } from './expected-cultivation/expected-cu
     BarchartComponent,
     AdminHomeComponent,
     FutureCultivationComponent,
-    ExpectedCultivationComponent
+    ExpectedCultivationComponent,
+    AddExpectedComponent
 
   ],
   imports: [
@@ -64,7 +66,8 @@ import { ExpectedCultivationComponent } from './expected-cultivation/expected-cu
   ],
   providers: [
     UserService,
-    BidService
+    BidService,
+    ExpectedCultivationComponent
   ],
   bootstrap: [AppComponent]
 })

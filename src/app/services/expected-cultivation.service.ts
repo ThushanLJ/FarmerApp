@@ -13,6 +13,12 @@ export class ExpectedCultivationService {
   public getexpectedCultivation(year): Observable<any> {
     return this.http.get(`http://localhost:8080/api/summary/coverage/${year}`);
   }
+
+  public addexpectedCultivation(details): Observable<any> {
+    return this.http.post(`http://localhost:8080/api/expected`, details);
+  }
+
+
   
   
 }

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class AdminHomeComponent implements OnInit {
   farmer: any;
+  marked: boolean = true;
 
   constructor(private auth:UserService, private router: Router) { }
 
@@ -30,6 +31,14 @@ export class AdminHomeComponent implements OnInit {
         window.location.reload()
       }
     )
+  }
+
+  home(){
+    this.marked = true
+  }
+
+  add(){
+    this.marked = false
   }
 
 

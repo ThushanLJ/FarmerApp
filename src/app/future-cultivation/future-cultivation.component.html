@@ -15,68 +15,89 @@
                     <div class="group">
                         <label for="year">Expected Year:</label>
                         <select name="year" [(ngModel)]="credential.year">
-                            <option>2019</option>
-                            <option>2020</option>
-                            <option>2021</option>
-                            <option>2022</option>
-                            <option>2022</option>
+                            <option *ngFor="let yr of year; let i = index">{{ yr }}</option>
                         </select>
                     </div>
+                    <br>
                     <button type="button" class="btn btn-success" (click)="AddFuture()">Submit</button>
                 </form>
 
             </div>
         </div>
     </div>
-    <div class="col">
-            <button type="button" class="btn btn-primary" routerLink="/expected_cultivation"> Goto Expected Cultitvations</button>
+    <div class="col" style="margin-top: 20%; margin-left: 20%;">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" style="padding: 20px;"> Goto Expected Cultitvations</button>
+    </div>
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" style="width: 1000px;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content" style="width: 1000px; margin-right: -500px; margin-left: 300px">
+            <div class="modal-header">
+              <h4 class="modal-title" id="exampleModalLongTitle" style="margin-left: 40%; color: green;">Expected cultivation</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <app-expected-cultivation></app-expected-cultivation>
+            </div>
+          </div>
         </div>
-</div>
+      </div>
+
+  </div>
+
+
+<div class="row" style="margin-top:50px;">
+
+  <div class="col">
 
         <h1>Current cultivation 2019</h1>
 
-        <table class="fixed_header">
+        <table class="fixed_header" style="margin-left:100px;">
             <thead>
               <tr>
                 <th>Harvest</th>
+                <th></th>
                 <th>Quantity</th>
               </tr>
             </thead>
             <tbody>
-    
-              <div *ngFor="let cur of current">
-              <tr>
+  
+              <tr *ngFor="let cur of current">
                 <td>{{ cur[0] }}</td>
+                <td></td>
                 <td>{{ cur[1] }}</td>
               </tr>
-            </div>
     
             </tbody>
           </table>
-    </div>
 
-    <div class="col">
-
+        </div>
+   
+        <div class="col">
             <h1>Current cultivation 2020</h1>
     
-            <table class="fixed_header">
+            <table class="fixed_header" style="margin-left:100px;">
                 <thead>
                   <tr>
                     <th>Harvest</th>
+                    <th></th>
                     <th>Quantity</th>
                   </tr>
                 </thead>
                 <tbody>
-        
-                  <div *ngFor="let fut of future">
-                  <tr>
+                  <tr *ngFor="let fut of future">
                     <td>{{ fut[0] }}</td>
+                    <td></td>
                     <td>{{ fut[1] }}</td>
                   </tr>
-                </div>
         
                 </tbody>
               </table>
+
         </div>
 
 </div>
+
+

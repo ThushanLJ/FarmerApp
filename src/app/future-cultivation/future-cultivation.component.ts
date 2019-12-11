@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FutureService } from '../services/future.service'
+import { ExpectedCultivationComponent } from '../expected-cultivation/expected-cultivation.component'
 
 @Component({
   selector: 'app-future-cultivation',
@@ -10,8 +11,11 @@ import { FutureService } from '../services/future.service'
 export class FutureCultivationComponent implements OnInit {
   current: any;
   future: any;
+  Getyear: any;
+  Setyear: any;
+  year: any[];
 
-  constructor(private fut: FutureService) { }
+  constructor(private fut: FutureService, private exe: ExpectedCultivationComponent) { }
 
   credential={
     type:'',
@@ -20,7 +24,14 @@ export class FutureCultivationComponent implements OnInit {
     farmerId:''
   }
 
+
   ngOnInit() {
+
+    var x = this.Getyear;
+     x = new Date();
+    this.Setyear = x.getFullYear();
+
+    this.year = [this.Setyear, this.Setyear+1, this.Setyear+2, this.Setyear+3, this.Setyear+4 ]
 
     this.fut.CurrentHarvest().subscribe(
       result=>{
@@ -48,7 +59,7 @@ export class FutureCultivationComponent implements OnInit {
       result=>{
         console.log(result)
         window.alert('You have successfully added future cultivation')
-        this.ngOnInit()
+        window.location.reload()
       }
     )
     

@@ -1,0 +1,23 @@
+<div class="wrapper">
+        <div class="container">
+            <form autocomplete="off" action="">
+                <div class="group">
+                    <label for="type">Expected quantity:</label>
+                    <input type="text" id="qty" name="expectedQuantity" [(ngModel)]="credential.expectedQuantity">
+                </div>
+                <div class="group">
+                    <label for="qty">Expected year:</label>
+                    <input type="text" id="yr" name="expectedYear" [(ngModel)]="credential.expectedYear">
+                </div>
+                <div class="group">
+                        <label for="qty">Type:</label>
+                        <input type="text" id="type" name="type" [(ngModel)]="credential.type">
+                    </div>
+                    
+                
+                <br>
+                <button type="button" class="btn btn-success" (click)="AddExpected()">Submit</button>
+            </form>
+
+        </div>
+    </div>
