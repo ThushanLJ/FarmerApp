@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ExpectedCultivationService } from '../services/expected-cultivation.service'
+import {Component, OnInit} from '@angular/core';
+import {ExpectedCultivationService} from '../services/expected-cultivation.service';
 
 
 @Component({
@@ -9,24 +9,26 @@ import { ExpectedCultivationService } from '../services/expected-cultivation.ser
 })
 export class ExpectedCultivationComponent implements OnInit {
 
-  constructor(private es:ExpectedCultivationService) { }
-  
+  constructor(private es: ExpectedCultivationService) {
+  }
+
   Getyear;
   Setyear;
-
   Cultivation_result;
 
   ngOnInit() {
-   var x = this.Getyear;
-   x = new Date();
-   this.Setyear = x.getFullYear();
-   console.log(this.Setyear);
+    var x = this.Getyear;
+    x = new Date();
+    this.Setyear = x.getFullYear();
+    console.log(this.Setyear);
 
-   this.es.getexpectedCultivation(this.Setyear).subscribe(
-     result=>{
-       this.Cultivation_result = result;
-       console.log(result);
-     });
+    this.es.getexpectedCultivation(2020).subscribe(
+      result => {
+        this.Cultivation_result = result;
+        this.Cultivation_result.sort((a, b) => b.percentage - a.percentage);
+        console.log('**************');
+        console.log(result);
+      });
   }
 
 }

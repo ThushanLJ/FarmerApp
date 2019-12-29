@@ -1,13 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable, of } from 'rxjs'
-import { Router } from '@angular/router'
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExpectedCultivationService {
-  constructor(private route:Router, private http:HttpClient) { }
+  constructor(private route: Router, private http: HttpClient) {
+  }
 
 
   public getexpectedCultivation(year): Observable<any> {
@@ -19,7 +20,5 @@ export class ExpectedCultivationService {
   }
 
 
-  
-  
 }
 

@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
-import { Observable, of } from 'rxjs'
-import { map } from 'rxjs/operators'
-import { Router } from '@angular/router'
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable, of} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,9 +12,10 @@ export class MapService {
   private latitude;
   private longitude;
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {
+  }
 
-  public updateLocation(latitude, longitude){
+  public updateLocation(latitude, longitude) {
     this.latitude = latitude;
     this.longitude = longitude;
   }
@@ -28,20 +29,20 @@ export class MapService {
   }
 
   public AddLand(land): Observable<any> {
-    return this.http.post(`http://localhost:8080/api/land`, land)
+    return this.http.post(`http://localhost:8080/api/land`, land);
   }
 
   public ViewLand(farmerId): Observable<any> {
-    return this.http.get(`http://localhost:8080/api/land/ ${farmerId}`)
+    return this.http.get(`http://localhost:8080/api/land/ ${farmerId}`);
   }
 
 
   public DeleteLand(landId): Observable<any> {
-    return this.http.delete(`http://localhost:8080/api/land/ ${landId}`)
+    return this.http.delete(`http://localhost:8080/api/land/ ${landId}`);
   }
 
   public AddHarvest(harvest): Observable<any> {
-    return this.http.post(`http://localhost:8080/api/farmer/harvest`, harvest)
+    return this.http.post(`http://localhost:8080/api/farmer/harvest`, harvest);
   }
 
   public ViewHarvest(landId): Observable<any> {
@@ -51,16 +52,14 @@ export class MapService {
   public viewTypes(): Observable<any> {
     return this.http.get(`http://localhost:8080/api/summary/types`);
   }
-  
+
   public sendType(type): Observable<any> {
     return this.http.get(`http://localhost:8080/api/summary/${type}`);
   }
 
-
   public UpdateHarvest(harvest): Observable<any> {
     return this.http.put(`http://localhost:8080/api/farmer/harvest`, harvest);
   }
-
 
 
 }

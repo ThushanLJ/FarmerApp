@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MapService } from '../services/map.service';
+import {Component, OnInit} from '@angular/core';
+import {MapService} from '../services/map.service';
 
 @Component({
   selector: 'app-chart',
@@ -11,33 +11,36 @@ export class ChartComponent implements OnInit {
 
   type;
   passtype;
- 
+
   marked;
 
   types;
   inf;
-  constructor(private mapS: MapService) { }
+
+  constructor(private mapS: MapService) {
+  }
 
   ngOnInit() {
     this.marked = true;
     this.mapS.viewTypes().subscribe(
       (data) => {
+        console.log('called *********');
+        console.log(data);
         this.types = data;
-        this.inf = data
-        console.log(this.types);
+        this.inf = data;
       });
   }
 
   submit() {
     this.marked = false;
     this.passtype = this.type;
-    console.log("selected type " + this.passtype);
-  //   this.mapS.sendType(this.type).subscribe(
-  //     (res) => {
-  //       this.details = res;
-  //       console.log(this.details);
-  //     });
-  // }
-}
+    console.log('selected type ' + this.passtype);
+    //   this.mapS.sendType(this.type).subscribe(
+    //     (res) => {
+    //       this.details = res;
+    //       console.log(this.details);
+    //     });
+    // }
+  }
 
 }
